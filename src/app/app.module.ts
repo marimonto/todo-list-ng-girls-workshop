@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { ListManagerComponent } from './list-manager/list-manager.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputButtonUnitComponent,
-    TodoListComponent
+    TodoListComponent,
+    ListManagerComponent
   ],
   imports: [
     BrowserModule
