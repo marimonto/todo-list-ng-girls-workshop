@@ -1,4 +1,4 @@
 <div class="todo-app">
     <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
-    <app-todo-list [todoList]="todoList"></app-todo-list>
+    <app-todo-list [todoList]="todoList" (remove)="removeItem($event)" (update)="updateItem($event.item, $event.changes)"></app-todo-list>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TodoItem } from '../interfaces/todo-item';
 
 @Component({
@@ -8,9 +8,26 @@ import { TodoItem } from '../interfaces/todo-item';
 })
 export class TodoListComponent implements OnInit {
   @Input() todoList: TodoItem[];
+  @Output() remove: EventEmitter<TodoItem> = new EventEmitter<TodoItem>();
+  @Output() update: EventEmitter<any> = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  removeItem(item: TodoItem): void {
+    this.remove.emit(item);
+  }
+
+  completeItem(item: TodoItem): void {
+    console.log(item);
+    
+    this.update.emit({
+      item: item,
+      changes: { completed: !item.completed }
+    });
+  }
+  
 
 }

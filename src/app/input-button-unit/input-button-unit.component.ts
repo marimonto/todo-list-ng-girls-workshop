@@ -15,7 +15,7 @@ export class InputButtonUnitComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeTitle(newTitle: string): void {
+  submitValue(newTitle: string): void {
     this.submit.emit(newTitle);
   }
 

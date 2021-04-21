@@ -21,4 +21,15 @@ export class ListManagerComponent  {
     this.todoListService.addItem({ title });
   }
 
+  removeItem(item): void {
+    this.todoListService.deleteItem(item);
+  }
+
+
+  updateItem(item, changes): void {
+    console.log(item, changes);
+    
+    this.todoListService.updateItem(item, changes);
+  }
+
 }

@@ -1,5 +1,14 @@
 <ul>
     <li class="todo-item" *ngFor="let todoItem of todoList">
-        {{ todoItem.title }}
+        <div>
+            <input type="checkbox" class="todo-checkbox" (click)="completeItem(todoItem)" [checked]="todoItem.completed" />
+            <span class="todo-title" [ngClass]="{'todo-complete': todoItem.completed}">
+                {{ todoItem.title }}
+            </span>
+        </div>
+        <button class="btn btn-red" (click)="removeItem(todoItem)">
+            remove
+        </button>
     </li>
+
 </ul>
