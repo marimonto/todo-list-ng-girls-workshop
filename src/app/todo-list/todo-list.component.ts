@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TodoItem } from '../interfaces/todo-item';
 
 @Component({
   selector: 'app-todo-list',
@@ -6,14 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
-  todoList = [
-    { title: 'install NodeJS' },
-    { title: 'install Angular CLI' },
-    { title: 'create new app' },
-    { title: 'serve app' },
-    { title: 'develop app' },
-    { title: 'deploy app' },
-  ];
+  @Input() todoList: TodoItem[];
   constructor() { }
 
   ngOnInit(): void {
